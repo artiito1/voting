@@ -365,6 +365,7 @@ export const LandingPage = () => {
             const toknContract = new web3.eth.Contract(TOKEN_ABI, TOKEN_ADDRESS);
             const tokenbalance = await toknContract.methods.balanceOf(account).call();
             const convertTokenBalance = web3.utils.fromWei(tokenbalance, "ether");
+            console.log(convertTokenBalance, "convertTokenBalance")
             setTokenBalance(convertTokenBalance);
         };
     }
